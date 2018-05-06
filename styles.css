@@ -1,0 +1,10 @@
+#iframe {
+    border: 3px solid darkslategrey;
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.range {
+    margin-bottom: 10px;
+}

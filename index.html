@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Politiscales Investigation Tool</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.2/css/bootstrap-colorpicker.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+
+
+
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h4>Tool for investigating <a href="//www.politiscales.net">www.politiscales.net</a> results</h4>
+        </div>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="input-group">
+        <label>Results language:
+            <select id="lang">
+                <option selected value="en_US">English</option>
+                <option value="ca_ES">Català</option>
+                <option value="de_DE">Deutsch</option>
+                <option value="es_ES">Español</option>
+                <option value="fil_PH">Filipino</option>
+                <option value="fr_FR">Français</option>
+                <option value="it_IT">Italiano</option>
+                <option value="pl_PL">Język polski</option>
+                <option value="no_NO">Norsk</option>
+                <option value="pt_BR">Português (Brasil)</option>
+                <option value="tr_TR">Türkçe</option>
+                <option value="ru_RU">Руский</option>
+                <option value="ar_MSA">العربية</option>
+                <option value="zh_CN">简化字</option>
+            </select>
+        </label>
+    </div>
+
+    <hr>
+
+    <div class="input-group">
+        <div class="range">
+            <label for="c">Constructivism / Essentialism:</label>
+            <input type="text" id="c" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="c-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="j">Rehabilitative justice / Punitive justice:</label>
+            <input type="text" id="j" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="j-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="s">Progressism / Conservatism:</label>
+            <input type="text" id="s" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="s-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="b">Internationalism / Nationalism:</label>
+            <input type="text" id="b" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="b-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="p">Communism / Capitalism:</label>
+            <input type="text" id="p" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="p-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="m">Regulationnism / Laissez-faire:</label>
+            <input type="text" id="m" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="m-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="e">Ecology / Productivism:</label>
+            <input type="text" id="e" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="e-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="t">Revolution / Reformism:</label>
+            <input type="text" id="t" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="t-range"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="input-group">
+        <!-- Bonus -->
+        <div class="range">
+            <label for="anar">Anarchism (>90% for bonus badge to be displayed):</label>
+            <input type="text" id="anar" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="anar-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="prag">Pragmatism (>50% for bonus badge to be displayed):</label>
+            <input type="text" id="prag" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="prag-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="femi">Radical feminism (>90% for bonus badge to be displayed):</label>
+            <input type="text" id="femi" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="femi-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="comp">Complotism (>90% for bonus badge to be displayed):</label>
+            <input type="text" id="comp" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="comp-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="vega">Veganism (>50% for bonus badge to be displayed):</label>
+            <input type="text" id="vega" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="vega-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="mona">Monarchism (>50% for bonus badge to be displayed):</label>
+            <input type="text" id="mona" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="mona-range"></div>
+        </div>
+
+        <div class="range">
+            <label for="reli">Missionnary (>50% for bonus badge to be displayed):</label>
+            <input type="text" id="reli" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="reli-range"></div>
+        </div>
+    </div>
+    <hr>
+    <button class="btn btn-default" id="submit">Render results</button>
+    <hr>
+    <iframe id="iframe">
+    </iframe>
+
+</main>
+
+<!-- Vendor -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Custom -->
+<script src="script.js"></script>
+
+</body>
+</html>
